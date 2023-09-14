@@ -1,5 +1,7 @@
 package com.wolfnode.wolf2w.user.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.Query;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wolfnode.wolf2w.user.domain.UserInfo;
 import com.wolfnode.wolf2w.user.mapper.UserMapper;
@@ -14,4 +16,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implements UserService {
+    @Override
+    public UserInfo checkPhoneExists(String phone) {
+        LambdaQueryWrapper lambdaQueryWrapper = new LambdaQueryWrapper<UserInfo>().eq(UserInfo::getPhone,phone);
+        return getOne(lambdaQueryWrapper);
+    }
 }
