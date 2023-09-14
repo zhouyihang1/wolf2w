@@ -1,0 +1,23 @@
+server:
+  port: 8010
+
+spring:
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 192.168.200.128:8848
+      config:
+        file-extension: yml
+        namespace: 4982a0d5-5d23-4077-a7db-528ff5860c13
+      discovery:
+        namespace: 4982a0d5-5d23-4077-a7db-528ff5860c13
+
+  application:
+    name: user-service
+
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+
+
