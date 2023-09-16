@@ -134,7 +134,7 @@ public class Md5Utils {
 //	}
 
     public static void main(String[] args) {
-        String str = "12345618888888888";
+        String str = "12345618262751449";
         String pass = Md5Utils.getMD5(str);
         System.out.println(pass);
     }

@@ -1,0 +1,2 @@
+com.wolfnode.wolf2w.auth.config.WebConfig
+com.wolfnode.wolf2w.auth.config.LoginFilterAutoConfiguration

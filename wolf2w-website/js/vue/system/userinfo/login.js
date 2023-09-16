@@ -4,7 +4,7 @@ var vue = new Vue({
     },
     methods:{
         login:function (){
-            $.post(getServiceUrl('u') + "/users/login", $("#_j_login_form").serialize(), function (data){
+            $.post(getServiceUrl('u') + "/user/login", $("#_j_login_form").serialize(), function (data){
                 console.log(data);
                 /**
                  * JsonReslut   --- data
